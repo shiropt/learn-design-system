@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import styled from "styled-components";
 import { action } from "@storybook/addon-actions";
 import { Icon } from "../Icon/Icon";
+import { StoryLinkWrapper } from "../StoryLinkWrapper/StoryLinkWrapper";
 const CustomLink = styled(Link)`
   && {
     color: red;
@@ -73,13 +74,13 @@ export const All: Story = {
         is actually a button
       </Link>
       <br />
-      {/* <Link tertiary LinkWrapper={StoryLinkWrapper} href="http://storybook.js.org">
+      <Link tertiary LinkWrapper={StoryLinkWrapper} href="http://storybook.js.org">
         has a LinkWrapper like GatsbyLink or NextLink
-      </Link> */}
+      </Link>
       <br />
-      {/* <CustomLink tertiary LinkWrapper={StoryLinkWrapper} href="http://storybook.js.org">
+      <CustomLink tertiary LinkWrapper={StoryLinkWrapper} href="http://storybook.js.org">
         has a LinkWrapper like GatsbyLink or NextLink with custom styling
-      </CustomLink> */}
+      </CustomLink>
     </div>
   ),
 };
