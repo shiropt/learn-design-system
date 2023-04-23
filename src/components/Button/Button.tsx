@@ -345,7 +345,7 @@ export const Button: FC<Props> = ({
   );
 };
 
-type Props = {
+export type Props = {
   isLoading: boolean;
   loadingText?: string;
   isLink?: boolean;
