@@ -3,6 +3,7 @@ import type { Props } from "./Button";
 import type { Meta, StoryObj } from "@storybook/react";
 import styled from "styled-components";
 import { Icon } from "../Icon/Icon";
+import { userEvent, within } from "@storybook/testing-library";
 import { StoryLinkWrapper } from "../StoryLinkWrapper/StoryLinkWrapper";
 
 const CustomButton = styled.button`
@@ -36,6 +37,12 @@ type Story = StoryObj<typeof Button>;
 export const Default: Story = {
   render: (args) => <Button {...args}>Default</Button>,
 };
+
+Default.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  await userEvent.click(canvas.getByRole("button"));
+};
+
 export const AllButtons: Story = {
   render: (args) => (
     <div>

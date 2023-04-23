@@ -62,10 +62,13 @@
     "@storybook/preset-create-react-app": "^7.0.6",
     "@storybook/react": "^7.0.6",
     "@storybook/react-webpack5": "^7.0.6",
-    "@storybook/testing-library": "^0.0.14-next.2",
+    "@storybook/testing-library": "^0.1.0",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "chromatic": "^6.17.3",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.6",
     "webpack": "^5.79.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "learn-design-system@0.1.0"
 }
