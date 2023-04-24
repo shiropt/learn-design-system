@@ -1,22 +1,21 @@
-import React, { Fragment, ReactNode } from "react";
-import PropTypes from "prop-types";
+import { ComponentProps, ReactNode } from "react";
 import styled, { css } from "styled-components";
 import { darken } from "polished";
 
 import { Icon } from "../Icon/Icon";
 import { color } from "../../shared/styles";
 
-type Props = {
-  isButton: boolean;
+export type Props = {
+  isButton?: boolean;
   children: ReactNode;
-  withArrow: boolean;
-  containsIcon: boolean;
-  LinkWrapper: any;
-  inverse: boolean;
-  nochrome: boolean;
-  secondary: boolean;
-  tertiary: boolean;
-};
+  withArrow?: boolean;
+  containsIcon?: boolean;
+  LinkWrapper: ((...args: any[]) => void) | object | undefined;
+  inverse?: boolean;
+  nochrome?: boolean;
+  secondary?: boolean;
+  tertiary?: boolean;
+} & ComponentProps<"link">;
 const linkStyles = css<Props>`
   display: inline-block;
   transition: transform 150ms ease-out, color 150ms ease-out;
@@ -166,7 +165,7 @@ const applyStyle = (LinkWrapper: any) => {
   );
 };
 
-export const Link = ({ isButton, withArrow, LinkWrapper, children, ...rest }: any) => {
+export const Link = ({ isButton = false, withArrow = false, LinkWrapper = undefined, children, ...rest }: Props) => {
   const content = (
     <>
       <LinkInner withArrow={withArrow}>
